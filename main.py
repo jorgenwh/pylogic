@@ -3,9 +3,18 @@ from formula_parser import FormulaParser
 from formula import Formula
 from truth_table import TruthTable
 
+def count_parentheses(expr):
+    if expr.count("(") != expr.count(")"):
+        print("Invalid formula: input formula must have an equal number of open and close parentheses.")
+        exit(1)
+
 if __name__ == "__main__":
     if len(sys.argv) < 2:
         print("Invalid run: no input formula specified")
+        exit(1)
+
+    # ensure parentheses count is correct
+    count_parentheses(sys.argv[1])
 
     parser = FormulaParser()
     formula = parser.parse(sys.argv[1]) 
