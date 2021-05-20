@@ -1,4 +1,4 @@
-## Usage
+## Valid usage
 
 Single logical variable
 ```
