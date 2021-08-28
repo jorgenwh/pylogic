@@ -1,4 +1,4 @@
-from formula import Formula
+from pytruth.formula import Formula
 
 class TruthTable():
     def __init__(self, formula):
@@ -52,4 +52,3 @@ class TruthTable():
             s += "\n" + sep
 
         return s
-

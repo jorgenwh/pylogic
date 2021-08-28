@@ -1,4 +1,3 @@
-
 class Formula():
     def __init__(self):
         self.subformulae = []
@@ -29,4 +28,3 @@ class Formula():
         if self.type == "-":
             return f"-{str(self.subformulae[0])}"
         return self.variables[0]
-

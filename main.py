@@ -1,7 +1,7 @@
 import sys
-from formula_parser import FormulaParser
-from formula import Formula
-from truth_table import TruthTable
+from pytruth.formula_parser import FormulaParser
+from pytruth.formula import Formula
+from pytruth.truth_table import TruthTable
 
 def count_parentheses(expr):
     """

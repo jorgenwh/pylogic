@@ -1,4 +1,4 @@
-from formula import Formula
+from pytruth.formula import Formula
 
 class FormulaParser():
     def __init__(self):
@@ -86,4 +86,3 @@ class FormulaParser():
     def skip_whites(self):
         while self.idx < len(self.string) and self.string[self.idx] == " ":
             self.idx += 1
-
