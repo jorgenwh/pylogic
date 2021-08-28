@@ -4,6 +4,9 @@ from formula import Formula
 from truth_table import TruthTable
 
 def count_parentheses(expr):
+    """
+    Makes sure the number of left and right parentheses are the same.
+    """
     if expr.count("(") != expr.count(")"):
         print("Invalid formula: input formula must have an equal number of open and close parentheses.")
         exit(1)
