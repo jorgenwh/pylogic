@@ -1,10 +1,12 @@
-### Installation
+## Installation
 
 ```bash
 pip install pylogic
 ```
 
-### Example usage
+## Example usage
+
+### script1.py
 
 ```python
 from pylogic.propositional import Formula, TruthTable
@@ -20,7 +22,7 @@ print("\nTruth table:")
 print(truth_table)
 ```
 
-### or
+### script2.py
 
 ```python
 from pylogic.propositional import Formula, TruthTable
@@ -37,8 +39,9 @@ print("\nTruth table:")
 print(truth_table)
 ```
 
-### , and then running
+### , and then running one of the following
 
 ```bash
-python main.py "(P -> Q)"
+python script1.py
+python script2.py "(P -> Q)"
 ```
