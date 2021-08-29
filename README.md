@@ -1,45 +1,44 @@
-## Valid usage
+### Installation
 
-Single logical variable
-```
-python3 main.py "P"
-```
-
-AND formula
-```
-python3 main.py "(P and Q)"
+```bash
+pip install pylogic
 ```
 
-OR formula
-```
-python3 main.py "(P or Q)"
+### Example usage
+
+```python
+from pylogic.propositional import Formula, TruthTable
+
+expr = "(P -> Q)"
+formula = Formula(expr)
+truth_table = TruthTable(formula)
+
+print(f"Formula: {formula}")
+print(f"Variables: {formula.get_variables()}")
+
+print("\nTruth table:")
+print(truth_table)
 ```
 
-Implication formula
-```
-python3 main.py "(P -> Q)"
+### or
+
+```python
+from pylogic.propositional import Formula, TruthTable
+import sys
+
+expr = sys.argv[1]
+formula = Formula(expr)
+truth_table = TruthTable(formula)
+
+print(f"Formula: {formula}")
+print(f"Variables: {formula.get_variables()}")
+
+print("\nTruth table:")
+print(truth_table)
 ```
 
-Negate formula
-```
-python3 main.py "-P"
-```
+### , and then running
 
-Nested formulae
+```bash
+python main.py "(P -> Q)"
 ```
-python3 main.py "((P -> Q) and (Q -> P))"
-
-python3 main.py "((P and Q) and R)"
-```
-
-## Invalid usage
-
-```
-python3 main.py "P -> Q"
-```
-because parentheses are necessary
-
-```
-python3 main.py "(P and Q and R)"
-```
-because parentheses must be used correctly (the program does not understand precedence rules)
