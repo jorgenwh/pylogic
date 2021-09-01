@@ -1,3 +1,6 @@
+This is very much a work in project, and it will probably never be finished.
+It only implements a helpful tool for a very small part of the course IN1150 at UiO.
+
 ## Installation
 
 ```bash
@@ -6,12 +9,12 @@ pip install pylogic
 
 ## Example usage
 
-### script1.py
+#### script1.py
 
 ```python
 from pylogic.propositional import Formula, TruthTable
 
-expr = "(P -> Q)"
+expr = "((P or Q) -> (P and Q))"
 formula = Formula(expr)
 truth_table = TruthTable(formula)
 
@@ -22,7 +25,13 @@ print("\nTruth table:")
 print(truth_table)
 ```
 
-### script2.py
+#### and then running by
+```bash
+python script1.py
+```
+
+#### or, 
+#### script2.py
 
 ```python
 from pylogic.propositional import Formula, TruthTable
@@ -39,9 +48,28 @@ print("\nTruth table:")
 print(truth_table)
 ```
 
-### , and then running one of the following
+#### and then running by
 
 ```bash
-python script1.py
-python script2.py "(P -> Q)"
+python script2.py "((P or Q) -> (P and Q))"
+```
+
+#### Both will yield the same output:
+
+```
+Formula: ((P or Q) -> (P and Q))
+Variables: ['P', 'Q']
+
+Truth table:
++---+---+-------------------------+
+| P | Q | ((P or Q) -> (P and Q)) |
++---+---+-------------------------+
+| 1 | 1 |            1            |
++---+---+-------------------------+
+| 1 | 0 |            0            |
++---+---+-------------------------+
+| 0 | 1 |            0            |
++---+---+-------------------------+
+| 0 | 0 |            1            |
++---+---+-------------------------+
 ```
