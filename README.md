@@ -73,3 +73,20 @@ Truth table:
 | 0 | 0 |            1            |
 +---+---+-------------------------+
 ```
+
+### Usage
+
+All formula objects are created from a string. The form of the string needs to follow the following rules:
+
+```python
+expr = "(A -> B)"           # Valid. Equal number of left and right parentheses.
+                            # Having parentheses around a formula or sub-formula is mandatory
+                            # unless the sub-formula is a primitive variable such as A og B here.
+
+expr = "A -> B"             # Invalid. The expression must be contained in parentheses.
+
+expr = "(A or B or C)"      # Invalid. Conjunctive expressions containing more than two variables must be split up
+                            # into smaller sub-formulae containing only two variables.
+
+expr = "(A or (B or C))"    # Valid.
+```
